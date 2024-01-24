@@ -25,7 +25,6 @@ extension StepsDetailScreen {
    var date: Date {
       return stepSummary.date
    }
-   
    var stepGoalSummaryText: String {
       if Calendar.current.isDateInToday(date)
             && stepGoalStatus == .below {
@@ -54,7 +53,6 @@ private extension StepsDetailScreen {
             .multilineTextAlignment(.leading)
       }
    }
-   
    var allMetrics: some View {
       HStack(spacing: 16) {
          MetricView(value: "\(stepSummary.stepCount)", title: "steps", style: .prominent)
@@ -81,10 +79,9 @@ private extension StepSummary {
       guard let distanceInMiles else { return nil }
       return String(format: "%0.1f mi", distanceInMiles)
    }
-   
    var formattedStairsClimbedString: String {
       guard let numStairsClimbed,
-               numStairsClimbed != 0 else {
+            numStairsClimbed != 0 else {
          return "None"
       }
       

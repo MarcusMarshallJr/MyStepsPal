@@ -14,22 +14,22 @@ struct ChangeGoalSheet: View {
    var onDismissTapped: () -> Void
    var onChangeStepGoalConfirmed: (Int) -> Void
    
-    var body: some View {
-       VStack {
-          dismissButton
-          viewGreeting
-          Spacer()
-          goalChangeControls
-          Spacer()
-          BrandButton(title: "Change Step Goal", 
-                      onTap: handleChangeGoalConfirmedTapped)
-          Text("Your daily goal will update for today and previous days.")
-             .brandFont(size: 14, color: BrandColors.N900)
-             .multilineTextAlignment(.center)
-             .frame(maxWidth: .infinity)
-          
-       }.padding(.horizontal, BrandConstants.sidePadding)
-    }
+   var body: some View {
+      VStack {
+         dismissButton
+         viewGreeting
+         Spacer()
+         goalChangeControls
+         Spacer()
+         BrandButton(title: "Change Step Goal", 
+                     onTap: handleChangeGoalConfirmedTapped)
+         Text("Your daily goal will update for today and previous days.")
+            .brandFont(size: 14, color: BrandColors.N900)
+            .multilineTextAlignment(.center)
+            .frame(maxWidth: .infinity)
+         
+      }.padding(.horizontal, BrandConstants.sidePadding)
+   }
 }
 
 //MARK: - Components
@@ -52,7 +52,6 @@ extension ChangeGoalSheet {
             .brandSubtitle()
       }.multilineTextAlignment(.center)
    }
-   
    private var goalChangeControls: some View {
       VStack {
          HStack(spacing: 24) {
@@ -86,7 +85,6 @@ extension ChangeGoalSheet {
       self.stepGoal = newStepGoal
       
    }
-   
    private func handleIncreaseGoal() {
       stepGoal += goalIncrement
    }
@@ -97,6 +95,6 @@ extension ChangeGoalSheet {
 
 #Preview {
    ChangeGoalSheet(stepGoal: 5000,
-                    onDismissTapped: {},
-                    onChangeStepGoalConfirmed: { _ in })
+                   onDismissTapped: {},
+                   onChangeStepGoalConfirmed: { _ in })
 }

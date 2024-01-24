@@ -20,7 +20,6 @@ class MockPedometer: Pedometer {
    func startLivePedometerData(withHandler handler: @escaping (PedometerData?, Error?) -> Void) {
       handler(livePedometerData_stubbed, livePedometerError_stubbed)
    }
-   
    func queryPedometerData(from startDate: Date, to endDate: Date) async throws -> PedometerData {
       guard let queriedPedometerStepCount_stubbed else {
          return MockPedometerData(date: startDate, stepCount: 1000)

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///The splash screen for the app. It loads a quick animation before removing itself.
 struct LaunchScreen: View {
    @Binding var isShown: Bool
    
@@ -66,7 +67,6 @@ extension LaunchScreen {
          removeTheScreen()
       }
    }
-   
    func zoomTheImageMoveTheText() {
       DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
          withAnimation {
@@ -77,7 +77,6 @@ extension LaunchScreen {
          }
       })
    }
-   
    func removeTheScreen() {
       DispatchQueue.main.asyncAfter(deadline: .now() + 1.9, execute: {
          withAnimation {

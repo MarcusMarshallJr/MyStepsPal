@@ -7,18 +7,18 @@
 
 import SwiftUI
 
+///A resuable view that shows the brand logo text.
 struct BrandLogo: View {
-   
    var color: Color = BrandColors.N0
    
-    var body: some View {
-       Text("mystepspal™")
-          .brandFont(size: 24,
-                     weight: .black,
-                     color: color)
-    }
+   var body: some View {
+      Text("mystepspal™")
+         .brandFont(size: 24,
+                    weight: .black,
+                    color: color)
+   }
 }
 
 #Preview {
-    BrandLogo()
+   BrandLogo()
 }

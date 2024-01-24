@@ -7,14 +7,25 @@
 
 import Foundation
 
+///A reusable ViewModel Object that encapsulates and summarizes important step related data.
 struct StepSummary: Identifiable {
+   
+   ///A unique identifier for the `Step Summary`
    let id: UUID = UUID()
+   
+   ///A timestamp that denotes the start of the day that the summary represents
    let date: Date
+   
+   ///The total steps taken during the`date`
    let stepCount: Int
+   
+   ///The total distance moved in miles during the `date`
    let distanceInMiles: Double?
+   
+   ///The total number of stairs climbed during the `date`
    let numStairsClimbed: Int?
    
-//MARK: - Initalization
+   //MARK: - Initalization
    init(date: Date,
         stepCount: Int,
         distanceInMiles: Double? = nil,
@@ -37,13 +48,13 @@ struct StepSummary: Identifiable {
       } else {
          self.distanceInMiles = nil
       }
-   
+      
       self.numStairsClimbed = pedometerData.numStairsClimbed
    }
    
    
    //MARK: - Functions
-   ///Generates a `Goal Status` based on this summary's step count in relation to a specified goal
+   ///Generates a `Goal Status`enum  based on this summary's step count in relation to a specified goal
    func stepGoalStatus(given goal: Int) -> GoalStatus {
       if stepCount > goal {
          return .exceeded

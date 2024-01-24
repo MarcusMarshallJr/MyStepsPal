@@ -13,25 +13,25 @@ struct StepsListItemView: View {
    let secondaryText: String?
    let goalStatus: GoalStatus
    
-    var body: some View {
-        HStack {
-           goalIndicator
-            VStack(alignment: .leading) {
-                Text(overline)
-                  .brandSubtleOverline(color: accentTextColor)
-                Text(primaryText)
-                  .brandTitle(color: BrandColors.N0)
-            }
-            Spacer()
-           if let secondaryText {
-              Text(secondaryText)
-                 .brandFont(size: 12, weight: .medium, color: accentTextColor)
-           }
-        }
-        .padding()
-        .background(backgroundColor)
-        .clipShape(RoundedRectangle(cornerRadius: 10))
-    }
+   var body: some View {
+      HStack {
+         goalIndicator
+         VStack(alignment: .leading) {
+            Text(overline)
+               .brandSubtleOverline(color: accentTextColor)
+            Text(primaryText)
+               .brandTitle(color: BrandColors.N0)
+         }
+         Spacer()
+         if let secondaryText {
+            Text(secondaryText)
+               .brandFont(size: 12, weight: .medium, color: accentTextColor)
+         }
+      }
+      .padding()
+      .background(backgroundColor)
+      .clipShape(RoundedRectangle(cornerRadius: 10))
+   }
 }
 
 //MARK: - Helpers

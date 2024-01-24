@@ -13,14 +13,14 @@ struct MetricView: View {
    let title: String
    var style: MetricStyle = .subtle
    
-    var body: some View {
-       switch style {
-       case .subtle:
-          subtleMetricView
-       case .prominent:
-          promientMetricView
-       }
-    }
+   var body: some View {
+      switch style {
+      case .subtle:
+         subtleMetricView
+      case .prominent:
+         promientMetricView
+      }
+   }
 }
 
 //MARK: - Views
@@ -42,7 +42,7 @@ extension MetricView {
             .brandSubtleOverline()
       }
    }
-
+   
 }
 
 #Preview {

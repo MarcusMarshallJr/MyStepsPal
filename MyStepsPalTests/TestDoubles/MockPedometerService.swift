@@ -9,12 +9,12 @@ import Foundation
 @testable import MyStepsPal
 
 class MockPedometerService: PedometerService_Protocol {
+   var pedometerIsAvailableForDevice: Bool = true
+   var pedometerPermissionIsAuthorizedByUser: Bool = true
+   
    var historicalPedometerData_stubbed: [PedometerData] = []
    var livePedometerData_stubbed: PedometerData? = nil
    var livePedometerError_stubed: Error? = nil
-   
-   var pedometerIsAvailableForDevice: Bool = true
-   var pedometerPermissionIsAuthorizedByUser: Bool = true
    
    func startLivePedometerData(withHandler handler: @escaping (PedometerData?, Error?) -> Void) throws {
       
@@ -28,7 +28,6 @@ class MockPedometerService: PedometerService_Protocol {
       
       handler(livePedometerData_stubbed, livePedometerError_stubed)
    }
-   
    func retrieveSixDayHistoricalPedometerData() async throws -> [PedometerData] {
       guard pedometerIsAvailableForDevice else {
          throw PedometerError.stepCountingUnavailable

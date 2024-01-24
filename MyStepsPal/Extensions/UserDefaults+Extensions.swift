@@ -8,6 +8,8 @@
 import Foundation
 
 extension UserDefaults: UserDefaults_Protocol {
+   
+   ///A type that represents every key placed in UserDefaults
    public enum Keys {
       static let dailyStepGoal = "dailyStepGoal"
       

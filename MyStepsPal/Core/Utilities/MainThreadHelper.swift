@@ -7,7 +7,7 @@
 
 import Foundation
 
-///Runs the passed in block of code on the main thread. Used mainly to ensure code runs smoothly on both on-device and during testing
+///Runs the passed in block of code on the main thread. Used mainly to ensure code runs smoothly both on-device and during testing
 func guaranteeThisRunsOnMainThread(_ blockToRun: @escaping () -> Void) {
    if Thread.isMainThread {
       blockToRun()

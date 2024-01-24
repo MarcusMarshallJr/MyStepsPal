@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///The main screen seen by the user. It displays current and historical step data
 struct HomeScreen: View {
    
    @StateObject var vm = HomeScreenViewModel(pedometerService: PedometerService(), 
@@ -58,7 +59,6 @@ extension HomeScreen {
       }
       
    }
-   
    var currentStepProgress: some View {
       NavigationLink(destination: StepsDetailScreen(stepSummary: vm.todaysStepSummary,
                                                     stepGoalStatus: vm.todaysStepSummary.stepGoalStatus(given: vm.dailyStepGoal))) {
@@ -87,7 +87,6 @@ extension HomeScreen {
          }
       }
    }
-   
    var stepsHistory: some View {
       VStack {
          Text("Steps History")

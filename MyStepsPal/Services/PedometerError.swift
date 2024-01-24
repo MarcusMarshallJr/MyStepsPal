@@ -12,6 +12,6 @@ enum PedometerError: String, Error {
    
    case stepCountingUnavailable = "Step Counting is not available on this device."
    case stepCountingAuthorizationUndetermined = "User has not indicated authorization status of pedometer data."
-   case stepCountingPermissionDenied = "User has denied use of pedometer data."
+   case stepCountingPermissionDenied = "MyStepsPal needs your permission to track your steps."
    case pedometerDataNil = "Pedometer data object returned nil"
 }

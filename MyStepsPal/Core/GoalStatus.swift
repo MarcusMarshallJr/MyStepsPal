@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A type that represents a user's progress toward a step goal
 enum GoalStatus {
    case exceeded
    case met

@@ -24,7 +24,6 @@ struct SimulatorPedometer: Pedometer {
       
       handler(data, nil)
    }
-   
    func queryPedometerData(from startDate: Date, to endDate: Date) async throws -> PedometerData {
       let randomStepCount = Int.random(in: 600...10_000)
       
@@ -41,7 +40,9 @@ struct SimulatorPedometer: Pedometer {
 
 //MARK: - Extensions
 extension SimulatorPedometer {
-   struct SimulatedPedometerData: PedometerData, Codable {
+   
+   ///A struct that gives a concrete implementation of PedometerData for use with a simulator
+   struct SimulatedPedometerData: PedometerData {
       var date: Date
       var stepCount: Int
       var distanceMovedInMeters: Double?

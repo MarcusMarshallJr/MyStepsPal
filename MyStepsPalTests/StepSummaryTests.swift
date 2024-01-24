@@ -70,7 +70,7 @@ final class StepSummaryTests: XCTestCase {
    func testStepSummaryComparator_isEqualFalse() {
       //GIVEN
       var booleanResult: Bool = true
-   
+      
       //WHEN
       booleanResult = Fixtures.validStepSummaries[0] == Fixtures.validStepSummaries[1]
       
@@ -78,5 +78,5 @@ final class StepSummaryTests: XCTestCase {
       XCTAssertFalse(booleanResult)
    }
    
-
+   
 }

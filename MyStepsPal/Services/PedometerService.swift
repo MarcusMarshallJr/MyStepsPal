@@ -23,7 +23,7 @@ class PedometerService: PedometerService_Protocol {
    
    
    //MARK: - Functions
-   ///Requests that underling pedometer to begin generating live data, checking first, to ensure theres an available pedometer and it has permission to use it. Then, it provides the data via an asychronously called completion handler.
+   ///Requests that underling pedometer to begin generating live data, checking first, to ensure there's an available pedometer and it has permission to use it. Then, it provides the data via an asychronously called completion handler.
    func startLivePedometerData(withHandler handler: @escaping (PedometerData?, Error?) -> Void) throws {
       
       guard pedometer.isAvailableForDevice else {
