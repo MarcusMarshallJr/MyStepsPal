@@ -15,13 +15,19 @@
 		0C1DF6602B60E09700A00508 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF65F2B60E09700A00508 /* Date+Extensions.swift */; };
 		0C1DF6622B60EAE200A00508 /* PedometerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6612B60EAE200A00508 /* PedometerService.swift */; };
 		0C1DF6642B60EB9D00A00508 /* CoreMotion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6632B60EB9D00A00508 /* CoreMotion+Extensions.swift */; };
+		0C1DF6692B60EF5700A00508 /* PedometerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6682B60EF5700A00508 /* PedometerServiceTests.swift */; };
+		0C1DF66C2B60F01F00A00508 /* MockPedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF66B2B60F01F00A00508 /* MockPedometer.swift */; };
+		0C1DF66E2B60F03800A00508 /* MockPedometerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF66D2B60F03800A00508 /* MockPedometerData.swift */; };
+		0C1DF6702B60F21B00A00508 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF66F2B60F21B00A00508 /* Fixtures.swift */; };
+		0C1DF6742B60F35900A00508 /* MyStepsPalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6722B60F35800A00508 /* MyStepsPalUITestsLaunchTests.swift */; };
+		0C1DF6752B60F35900A00508 /* MyStepsPalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6732B60F35900A00508 /* MyStepsPalUITests.swift */; };
+		0C1DF6772B60F42E00A00508 /* SimulatorPedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6762B60F42E00A00508 /* SimulatorPedometer.swift */; };
+		0C1DF6792B60F60100A00508 /* SimulatorPedometerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6782B60F60100A00508 /* SimulatorPedometerTests.swift */; };
+		0C1DF67B2B60F69C00A00508 /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF67A2B60F69C00A00508 /* Date+ExtensionsTests.swift */; };
 		0C7C7C482B60DAA900444DD0 /* MyStepsPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */; };
 		0C7C7C4A2B60DAA900444DD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C492B60DAA900444DD0 /* ContentView.swift */; };
 		0C7C7C4C2B60DAAA00444DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */; };
 		0C7C7C4F2B60DAAA00444DD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4E2B60DAAA00444DD0 /* Preview Assets.xcassets */; };
-		0C7C7C592B60DAAA00444DD0 /* MyStepsPalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C582B60DAAA00444DD0 /* MyStepsPalTests.swift */; };
-		0C7C7C632B60DAAA00444DD0 /* MyStepsPalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C622B60DAAA00444DD0 /* MyStepsPalUITests.swift */; };
-		0C7C7C652B60DAAA00444DD0 /* MyStepsPalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C642B60DAAA00444DD0 /* MyStepsPalUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,16 +56,23 @@
 		0C1DF65F2B60E09700A00508 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		0C1DF6612B60EAE200A00508 /* PedometerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerService.swift; sourceTree = "<group>"; };
 		0C1DF6632B60EB9D00A00508 /* CoreMotion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+Extensions.swift"; sourceTree = "<group>"; };
+		0C1DF6682B60EF5700A00508 /* PedometerServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerServiceTests.swift; sourceTree = "<group>"; };
+		0C1DF66B2B60F01F00A00508 /* MockPedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPedometer.swift; sourceTree = "<group>"; };
+		0C1DF66D2B60F03800A00508 /* MockPedometerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPedometerData.swift; sourceTree = "<group>"; };
+		0C1DF66F2B60F21B00A00508 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
+		0C1DF6712B60F35800A00508 /* MyStepsPalUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyStepsPalUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		0C1DF6722B60F35800A00508 /* MyStepsPalUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStepsPalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0C1DF6732B60F35900A00508 /* MyStepsPalUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStepsPalUITests.swift; sourceTree = "<group>"; };
+		0C1DF6762B60F42E00A00508 /* SimulatorPedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorPedometer.swift; sourceTree = "<group>"; };
+		0C1DF6782B60F60100A00508 /* SimulatorPedometerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorPedometerTests.swift; sourceTree = "<group>"; };
+		0C1DF67A2B60F69C00A00508 /* Date+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		0C7C7C442B60DAA900444DD0 /* MyStepsPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStepsPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsPalApp.swift; sourceTree = "<group>"; };
 		0C7C7C492B60DAA900444DD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C7C7C4E2B60DAAA00444DD0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C7C7C542B60DAAA00444DD0 /* MyStepsPalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyStepsPalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C7C7C582B60DAAA00444DD0 /* MyStepsPalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsPalTests.swift; sourceTree = "<group>"; };
 		0C7C7C5E2B60DAAA00444DD0 /* MyStepsPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyStepsPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C7C7C622B60DAAA00444DD0 /* MyStepsPalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsPalUITests.swift; sourceTree = "<group>"; };
-		0C7C7C642B60DAAA00444DD0 /* MyStepsPalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsPalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +108,7 @@
 				0C1DF6562B60DFA600A00508 /* PedometerError.swift */,
 				0C1DF65B2B60E06000A00508 /* Pedometer.swift */,
 				0C1DF65D2B60E06800A00508 /* PedometerData.swift */,
+				0C1DF6762B60F42E00A00508 /* SimulatorPedometer.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -107,6 +121,16 @@
 				0C1DF6632B60EB9D00A00508 /* CoreMotion+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0C1DF66A2B60EFF300A00508 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DF66B2B60F01F00A00508 /* MockPedometer.swift */,
+				0C1DF66F2B60F21B00A00508 /* Fixtures.swift */,
+				0C1DF66D2B60F03800A00508 /* MockPedometerData.swift */,
+			);
+			path = TestDoubles;
 			sourceTree = "<group>";
 		};
 		0C7C7C3B2B60DAA900444DD0 = {
@@ -155,7 +179,10 @@
 		0C7C7C572B60DAAA00444DD0 /* MyStepsPalTests */ = {
 			isa = PBXGroup;
 			children = (
-				0C7C7C582B60DAAA00444DD0 /* MyStepsPalTests.swift */,
+				0C1DF67A2B60F69C00A00508 /* Date+ExtensionsTests.swift */,
+				0C1DF6682B60EF5700A00508 /* PedometerServiceTests.swift */,
+				0C1DF6782B60F60100A00508 /* SimulatorPedometerTests.swift */,
+				0C1DF66A2B60EFF300A00508 /* TestDoubles */,
 			);
 			path = MyStepsPalTests;
 			sourceTree = "<group>";
@@ -163,8 +190,9 @@
 		0C7C7C612B60DAAA00444DD0 /* MyStepsPalUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0C7C7C622B60DAAA00444DD0 /* MyStepsPalUITests.swift */,
-				0C7C7C642B60DAAA00444DD0 /* MyStepsPalUITestsLaunchTests.swift */,
+				0C1DF6732B60F35900A00508 /* MyStepsPalUITests.swift */,
+				0C1DF6722B60F35800A00508 /* MyStepsPalUITestsLaunchTests.swift */,
+				0C1DF6712B60F35800A00508 /* MyStepsPalUITests-Bridging-Header.h */,
 			);
 			path = MyStepsPalUITests;
 			sourceTree = "<group>";
@@ -240,10 +268,12 @@
 					};
 					0C7C7C532B60DAAA00444DD0 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 						TestTargetID = 0C7C7C432B60DAA900444DD0;
 					};
 					0C7C7C5D2B60DAAA00444DD0 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 						TestTargetID = 0C7C7C432B60DAA900444DD0;
 					};
 				};
@@ -308,6 +338,7 @@
 				0C1DF65C2B60E06000A00508 /* Pedometer.swift in Sources */,
 				0C1DF65E2B60E06800A00508 /* PedometerData.swift in Sources */,
 				0C1DF65A2B60DFCB00A00508 /* String+Extensions.swift in Sources */,
+				0C1DF6772B60F42E00A00508 /* SimulatorPedometer.swift in Sources */,
 				0C1DF6552B60DF8800A00508 /* PedometerService_Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +347,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C7C7C592B60DAAA00444DD0 /* MyStepsPalTests.swift in Sources */,
+				0C1DF66E2B60F03800A00508 /* MockPedometerData.swift in Sources */,
+				0C1DF6692B60EF5700A00508 /* PedometerServiceTests.swift in Sources */,
+				0C1DF66C2B60F01F00A00508 /* MockPedometer.swift in Sources */,
+				0C1DF67B2B60F69C00A00508 /* Date+ExtensionsTests.swift in Sources */,
+				0C1DF6702B60F21B00A00508 /* Fixtures.swift in Sources */,
+				0C1DF6792B60F60100A00508 /* SimulatorPedometerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,8 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C7C7C652B60DAAA00444DD0 /* MyStepsPalUITestsLaunchTests.swift in Sources */,
-				0C7C7C632B60DAAA00444DD0 /* MyStepsPalUITests.swift in Sources */,
+				0C1DF6742B60F35900A00508 /* MyStepsPalUITestsLaunchTests.swift in Sources */,
+				0C1DF6752B60F35900A00508 /* MyStepsPalUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +563,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5VXJUNYC2Z;
@@ -536,6 +573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusmarshalljr.MyStepsPalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyStepsPal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyStepsPal";
@@ -547,6 +585,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5VXJUNYC2Z;
@@ -566,14 +605,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5VXJUNYC2Z;
+				DEVELOPMENT_TEAM = 9X6L8F26YR;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusmarshalljr.MyStepsPalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "MyStepsPalUITests/MyStepsPalUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MyStepsPal;
@@ -584,14 +626,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5VXJUNYC2Z;
+				DEVELOPMENT_TEAM = 9X6L8F26YR;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusmarshalljr.MyStepsPalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "MyStepsPalUITests/MyStepsPalUITests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MyStepsPal;
