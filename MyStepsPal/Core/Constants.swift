@@ -14,7 +14,7 @@ struct BrandConstants {
 
 ///A struct encapsulating all brand related colors for easy access.
 struct BrandColors {
-   static let B200 = Color("B300")
+   static let B200 = Color("B200")
    static let B500 = Color("B500")
    static let B900 = Color("B900")
    
@@ -22,7 +22,7 @@ struct BrandColors {
    static let N200 = Color("N200")
    static let N900 = Color("N900")
    
-   static let P200 = Color("P300")
+   static let P200 = Color("P200")
    static let P500 = Color("P500")
    static let P900 = Color("P900")
    

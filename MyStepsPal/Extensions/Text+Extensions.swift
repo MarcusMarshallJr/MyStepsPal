@@ -13,33 +13,45 @@ extension Text {
                   weight: Font.Weight = .regular,
                   color: Color = BrandColors.N900) -> some View {
       
-      self.font(.system(size: size, design: .rounded))
+      self.font(.system(size: size))
          .fontWeight(weight)
          .foregroundColor(color)
    }
     
-    func brandProminentOverline() -> some View {
-        self.brandFont(size: 16, weight: .black)
+    func brandProminentOverline(color: Color = BrandColors.N900) -> some View {
+       self.brandFont(size: 16, 
+                      weight: .black,
+                      color: color)
     }
     
-    func brandSubtleOverline() -> some View {
-        self.brandSubtitle()
+    func brandSubtleOverline(color: Color = BrandColors.N900) -> some View {
+        self.brandSubtitle(color: color)
     }
     
-    func brandTitle() -> some View {
-       self.brandFont(size: 24, weight: .bold)
+    func brandTitle(color: Color = BrandColors.N900) -> some View {
+       self.brandFont(size: 24, 
+                      weight: .bold,
+                      color: color)
     }
     
-    func brandSubtitle() -> some View {
-        self.brandFont(size: 16, weight: .medium)
+   func brandSubtitle(color: Color = BrandColors.N900) -> some View {
+        self.brandFont(size: 16, 
+                       weight: .medium,
+                       color: color)
     }
 
-    func brandProminentNumber() -> some View {
-        self.brandFont(size: 48, weight: .black)
+    func brandProminentNumber(color: Color = BrandColors.N900) -> some View {
+        self.brandFont(size: 48, 
+                       weight: .black,
+                       color: color)
     }
    
-   func brandSubtleNumber() -> some View {
-      self.brandTitle()
+   func brandSubtleNumber(color: Color = BrandColors.N900) -> some View {
+      self.brandTitle(color: color)
+   }
+   
+   func brandButtonText(color: Color = BrandColors.B500) -> some View {
+      self.brandFont(size: 14, weight: .bold, color: color)
    }
     
 }

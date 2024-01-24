@@ -16,14 +16,14 @@ struct HomeScreen: View {
          ZStack(alignment: .top) {
             ScrollView {
                VStack(spacing: 16) {
-                  BrandLogo(color: BrandColors.N900)
+                  BrandLogo(color: BrandColors.B500)
                      .padding(.top, BrandConstants.sidePadding)
                      .padding(.bottom, 60)
                   userGreeting
                   currentStepProgress
                   stepsHistory
                }.padding(.horizontal, BrandConstants.sidePadding)
-                  
+               
             }
             if let error = viewModel.error {
                BrandColors.N900
@@ -55,13 +55,18 @@ extension HomeScreen {
    var changeGoalButton: some View {
       Button(action: changeGoalPressed, label: {
          Text("Change Goal")
+            .brandButtonText()
+            .padding()
+            .padding(.horizontal)
+            .background(BrandColors.B200)
+            .clipShape(RoundedRectangle(cornerRadius: 9))
       })
    }
    
    var userGreeting: some View {
       VStack(spacing: 8) {
          Text("today's Steps".uppercased())
-            .brandProminentOverline()
+            .brandProminentOverline(color: BrandColors.B500)
          Text("Hi there, you've walked\n \(todaysProgressPercentage) of your goal.")
             .brandTitle()
             .multilineTextAlignment(.center)
@@ -71,26 +76,29 @@ extension HomeScreen {
    }
    
    var currentStepProgress: some View {
-      VStack(spacing: 16) {
-         ZStack {
-            ArcProgressView(progress: todaysProgress)
-               .frame(width: UIScreen.main.bounds.width - 120)
-            VStack {
-               Image(systemName: "figure.walk")
-                  .font(.system(size: 40))
-               Text("\(viewModel.todaysStepSummary.stepCount)".uppercased())
-                  .brandProminentNumber()
-               Text("Steps".uppercased())
-                  .brandSubtleOverline()
-               
+      NavigationLink(destination: StepsDetailScreen(stepSummary: viewModel.todaysStepSummary)) {
+         VStack(spacing: 16) {
+            ZStack {
+               ArcProgressView(progress: todaysProgress)
+                  .frame(width: UIScreen.main.bounds.width - 120)
+               VStack {
+                  Image(systemName: "figure.walk")
+                     .font(.system(size: 40))
+                     .foregroundStyle(BrandColors.B900)
+                  
+                  Text("\(viewModel.todaysStepSummary.stepCount)".uppercased())
+                     .brandProminentNumber()
+                  Text("Steps".uppercased())
+                     .brandSubtleOverline(color: BrandColors.B500)
+                  
+               }
             }
-         }
-         NavigationLink(destination: StepsDetailScreen(stepSummary: viewModel.todaysStepSummary)) {
+            
             HStack(spacing: 4) {
                Text("See Today's Activity")
                Image(systemName: "chevron.right")
                   .font(.system(size: 14))
-            }
+            }.foregroundStyle(BrandColors.B500)
          }
       }
    }
