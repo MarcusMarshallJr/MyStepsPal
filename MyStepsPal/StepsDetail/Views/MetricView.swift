@@ -30,14 +30,14 @@ extension MetricView {
          Text(title.uppercased())
             .brandSubtleOverline()
          Text(value)
-            .brandSubtleNumber()
+            .brandSubtleNumber(color: BrandColors.B500)
       }
    }
    
    var promientMetricView: some View {
       VStack(alignment: .leading) {
          Text(value)
-            .brandProminentNumber()
+            .brandProminentNumber(color: BrandColors.B500)
          Text(title.uppercased())
             .brandSubtleOverline()
       }

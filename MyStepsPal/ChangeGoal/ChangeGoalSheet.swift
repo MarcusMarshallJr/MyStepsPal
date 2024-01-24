@@ -26,6 +26,7 @@ struct ChangeGoalSheet: View {
           Text("Your daily goal will update for today and previous days.")
              .brandFont(size: 14, color: BrandColors.N900)
              .multilineTextAlignment(.center)
+             .frame(maxWidth: .infinity)
           
        }.padding(.horizontal, BrandConstants.sidePadding)
     }

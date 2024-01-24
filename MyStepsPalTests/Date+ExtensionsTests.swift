@@ -24,6 +24,19 @@ final class Date_ExtensionsTests: XCTestCase {
       XCTAssertEqual(shortDate, expectedShortDate)
    }
    
+   func testLongDate_generatesCorrectString() {
+      //GIVEN
+      let expectedLongDate = "January 23, 2024"
+      let dateObject = Fixtures.january23
+      let longDate: String
+      
+      //WHEN
+      longDate = dateObject.longDate
+      
+      //THEN
+      XCTAssertEqual(longDate, expectedLongDate)
+   }
+   
    func testDayString_generatesCorrectString() {
       //GIVEN
       let expectedDayString = "Tuesday"
@@ -34,7 +47,9 @@ final class Date_ExtensionsTests: XCTestCase {
       dayString = dateObject.dayString
       
       //THEN
-      if Calendar.current.isDateInYesterday(dateObject) {
+      if Calendar.current.isDateInToday(dateObject) {
+         XCTAssertEqual(dayString, "Today")
+      } else if Calendar.current.isDateInYesterday(dateObject) {
          XCTAssertEqual(dayString, "Yesterday")
       } else {
          XCTAssertEqual(dayString, expectedDayString)

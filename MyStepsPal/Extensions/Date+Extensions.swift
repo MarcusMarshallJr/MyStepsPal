@@ -16,8 +16,19 @@ extension Date {
       return dateFormatter.string(from: self)
    }
    
+   ///Returns the elongated date style of this date: January 24, 2023
+   var longDate: String {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateStyle = .long
+      return dateFormatter.string(from: self)
+   }
+   
    ///Returns the day value of this date as a String
    var dayString: String {
+      if Calendar.current.isDateInToday(self) {
+         return "Today"
+      }
+      
       if Calendar.current.isDateInYesterday(self) {
          return "Yesterday"
       }

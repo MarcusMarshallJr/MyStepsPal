@@ -26,26 +26,6 @@ extension StepsDetailScreen {
       return stepSummary.date
    }
    
-   var dayString: String {
-      if Calendar.current.isDateInToday(date) {
-         return "today"
-      }
-      
-      if Calendar.current.isDateInYesterday(date) {
-         return "yesterday"
-      }
-      
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "EEEE"
-      return dateFormatter.string(from: date)
-   }
-   
-   var longDate: String {
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateStyle = .long
-      return dateFormatter.string(from: self.date)
-   }
-   
    var stepGoalSummaryText: String {
       if Calendar.current.isDateInToday(date)
             && stepGoalStatus == .below {
@@ -54,11 +34,11 @@ extension StepsDetailScreen {
       
       switch stepGoalStatus {
       case .exceeded:
-         return "Congrats! You exceeded your step goal on \(dayString)."
+         return "Congrats! You exceeded your step goal on \(date.dayString)."
       case .met:
-         return "Whoo Hoo! You met your step goal \(dayString)."
+         return "Whoo Hoo! You met your step goal \(date.dayString)."
       case .below:
-         return "You're were bit shy of your step goal \(dayString)."
+         return "You're were bit shy of your step goal \(date.dayString)."
       }
    }
 }
@@ -67,8 +47,8 @@ extension StepsDetailScreen {
 private extension StepsDetailScreen {
    var detailScreenGreeting: some View {
       VStack(alignment: .leading) {
-         Text(longDate.uppercased())
-            .brandProminentOverline()
+         Text(date.longDate.uppercased())
+            .brandProminentOverline(color: BrandColors.B500)
          Text(stepGoalSummaryText)
             .brandTitle()
             .multilineTextAlignment(.leading)
