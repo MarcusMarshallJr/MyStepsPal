@@ -31,6 +31,7 @@ struct HomeScreen: View {
                BrandColors.N900
                   .ignoresSafeArea(.all)
                   .opacity(0.4)
+                  .onTapGesture { /*Empty closure used to prevent interactivity with layers below in ZStack */ }
                ErrorView(title: error)
             }
          }.task {

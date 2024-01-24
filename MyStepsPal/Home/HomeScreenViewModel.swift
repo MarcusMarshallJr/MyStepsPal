@@ -107,9 +107,10 @@ class HomeScreenViewModel: ObservableObject {
             
             if let pedometerError = error as? PedometerError {
                self.error = pedometerError.rawValue
+            } else if error.localizedDescription.contains("error 105") {
+               self.error = PedometerError.stepCountingPermissionDenied.rawValue
             } else {
-               self.error = "Unknown error"
-               print(error.localizedDescription)
+               self.error = "MyStepsPal encoutered an unknown error."
             }
             
             
