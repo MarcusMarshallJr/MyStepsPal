@@ -10,6 +10,7 @@ import SwiftUI
 struct StepsDetailScreen: View {
    
    var stepSummary: StepSummary
+   let stepGoalStatus: GoalStatus
    
    var body: some View {
       VStack(alignment: .leading) {
@@ -19,13 +20,56 @@ struct StepsDetailScreen: View {
    }
 }
 
-//MARK: - Components
+//MARK: - Helper Properties
 extension StepsDetailScreen {
+   var date: Date {
+      return stepSummary.date
+   }
+   
+   var dayString: String {
+      if Calendar.current.isDateInToday(date) {
+         return "today"
+      }
+      
+      if Calendar.current.isDateInYesterday(date) {
+         return "yesterday"
+      }
+      
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "EEEE"
+      return dateFormatter.string(from: date)
+   }
+   
+   var longDate: String {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateStyle = .long
+      return dateFormatter.string(from: self.date)
+   }
+   
+   var stepGoalSummaryText: String {
+      if Calendar.current.isDateInToday(date)
+            && stepGoalStatus == .below {
+         return "Keep it up! You can make your step goal for today!"
+      }
+      
+      switch stepGoalStatus {
+      case .exceeded:
+         return "Congrats! You exceeded your step goal on \(dayString)."
+      case .met:
+         return "Whoo Hoo! You met your step goal \(dayString)."
+      case .below:
+         return "You're were bit shy of your step goal \(dayString)."
+      }
+   }
+}
+
+//MARK: - Components
+private extension StepsDetailScreen {
    var detailScreenGreeting: some View {
       VStack(alignment: .leading) {
-         Text(stepSummary.longDate.uppercased())
+         Text(longDate.uppercased())
             .brandProminentOverline()
-         Text(stepSummary.stepGoalSummaryText)
+         Text(stepGoalSummaryText)
             .brandTitle()
             .multilineTextAlignment(.leading)
       }
@@ -53,31 +97,6 @@ extension StepsDetailScreen {
 
 //MARK: - Private Extensions
 private extension StepSummary {
-   
-   var stepGoalSummaryText: String {
-      return "Fix Me"
-   }
-   
-   var dayString: String {
-      if Calendar.current.isDateInToday(self.date) {
-         return "today"
-      }
-      
-      if Calendar.current.isDateInYesterday(self.date) {
-         return "yesterday"
-      }
-      
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "EEEE"
-      return dateFormatter.string(from: self.date)
-   }
-   
-   var longDate: String {
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateStyle = .long
-      return dateFormatter.string(from: self.date)
-   }
-   
    var formattedMileString: String? {
       guard let distanceInMiles else { return nil }
       return String(format: "%0.1f mi", distanceInMiles)
@@ -103,5 +122,6 @@ private extension StepSummary {
    StepsDetailScreen(stepSummary: StepSummary(date: Date(),
                                               stepCount: 204,
                                               distanceInMiles: 3.5,
-                                              stairsClimbed: 0))
+                                              stairsClimbed: 0), 
+                     stepGoalStatus: .exceeded)
 }

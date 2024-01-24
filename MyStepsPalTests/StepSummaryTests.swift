@@ -11,7 +11,53 @@ import XCTest
 
 final class StepSummaryTests: XCTestCase {
    
+   //MARK: - Test stepGoalStatus
+   func testStepGoalStatus_generatesExceededStatus() {
+      //GIVEN
+      var goalStatus: GoalStatus?
+      let stepSummary = Fixtures.validStepSummary
+      let goal = stepSummary.stepCount - 1
+      
+      //WHEN
+      goalStatus = stepSummary.stepGoalStatus(given: goal)
+      
+      //THEN
+      XCTAssertNotNil(goalStatus)
+      XCTAssertEqual(goalStatus, .exceeded)
+   }
+   
+   func testStepGoalStatus_generatesMetStatus() {
+      //GIVEN
+      var goalStatus: GoalStatus?
+      let stepSummary = Fixtures.validStepSummary
+      let goal = stepSummary.stepCount
+      
+      //WHEN
+      goalStatus = stepSummary.stepGoalStatus(given: goal)
+      
+      //THEN
+      XCTAssertNotNil(goalStatus)
+      XCTAssertEqual(goalStatus, .met)
+   }
+   
+   func testStepGoalStatus_generatesBelowStatus() {
+      //GIVEN
+      var goalStatus: GoalStatus?
+      let stepSummary = Fixtures.validStepSummary
+      let goal = stepSummary.stepCount + 1
+      
+      //WHEN
+      goalStatus = stepSummary.stepGoalStatus(given: goal)
+      
+      //THEN
+      XCTAssertNotNil(goalStatus)
+      XCTAssertEqual(goalStatus, .below)
+   }
+   
+   
+   //MARK: - Test Step Summary Comparator
    func testStepSummaryComparator_isEqualTrue() {
+      //GIVEN
       var booleanResult: Bool = false
       
       //WHEN
@@ -22,6 +68,7 @@ final class StepSummaryTests: XCTestCase {
    }
    
    func testStepSummaryComparator_isEqualFalse() {
+      //GIVEN
       var booleanResult: Bool = true
    
       //WHEN
@@ -30,7 +77,6 @@ final class StepSummaryTests: XCTestCase {
       //THEN
       XCTAssertFalse(booleanResult)
    }
-   
    
 
 }

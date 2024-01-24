@@ -14,6 +14,7 @@ struct StepSummary: Identifiable {
    let distanceInMiles: Double?
    let numStairsClimbed: Int?
    
+//MARK: - Initalization
    init(date: Date,
         stepCount: Int,
         distanceInMiles: Double? = nil,
@@ -38,6 +39,19 @@ struct StepSummary: Identifiable {
       }
    
       self.numStairsClimbed = pedometerData.numStairsClimbed
+   }
+   
+   
+   //MARK: - Functions
+   ///Generates a `Goal Status` based on this summary's step count in relation to a specified goal
+   func stepGoalStatus(given goal: Int) -> GoalStatus {
+      if stepCount > goal {
+         return .exceeded
+      } else if stepCount == goal {
+         return .met
+      }
+      
+      return .below
    }
 }
 

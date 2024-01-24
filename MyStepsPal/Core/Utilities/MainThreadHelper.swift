@@ -1,5 +1,5 @@
 //
-//  Helpers.swift
+//  MainThreadHelper.swift
 //  MyStepsPal
 //
 //  Created by Marcus Marshall, Jr on 1/24/24.

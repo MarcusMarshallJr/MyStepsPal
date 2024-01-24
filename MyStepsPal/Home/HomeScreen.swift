@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HomeScreen: View {
    
-   @StateObject var viewModel = HomeScreenViewModel(pedometerService: PedometerService())
+   @StateObject var vm = HomeScreenViewModel(pedometerService: PedometerService(), 
+                                             userDefaults: UserDefaults.self)
    
    var body: some View {
       NavigationStack {
@@ -25,68 +26,52 @@ struct HomeScreen: View {
                }.padding(.horizontal, BrandConstants.sidePadding)
                
             }
-            if let error = viewModel.error {
+            if let error = vm.error {
                BrandColors.N900
                   .ignoresSafeArea(.all)
                   .opacity(0.4)
                ErrorView(title: error)
             }
          }.task {
-            await viewModel.getHistoricalStepData()
-            viewModel.startLiveStepData()
+            await vm.startDataRetrival()
          }
+      }.sheet(isPresented: $vm.presentStepGoalSheet) {
+         ChangeGoalSheet(stepGoal: vm.dailyStepGoal,
+                         onDismissTapped: vm.handleChangeGoalDismissed,
+                         onChangeStepGoalConfirmed: vm.handleChangeGoalConfirmed(newGoal:))
+         .presentationDetents([.medium])
       }
    }
 }
 
-//MARK: - Helper Properties
-extension HomeScreen {
-   var todaysProgress: Double {
-      return Double(viewModel.todaysStepSummary.stepCount) / Double(viewModel.dailyStepGoal)
-   }
-   
-   var todaysProgressPercentage: String {
-      return String(format: "%.0f%%", (todaysProgress * 100))
-   }
-}
 
 //MARK: - Components
 extension HomeScreen {
-   var changeGoalButton: some View {
-      Button(action: changeGoalPressed, label: {
-         Text("Change Goal")
-            .brandButtonText()
-            .padding()
-            .padding(.horizontal)
-            .background(BrandColors.B200)
-            .clipShape(RoundedRectangle(cornerRadius: 9))
-      })
-   }
-   
    var userGreeting: some View {
       VStack(spacing: 8) {
          Text("today's Steps".uppercased())
             .brandProminentOverline(color: BrandColors.B500)
-         Text("Hi there, you've walked\n \(todaysProgressPercentage) of your goal.")
+         Text("Hi there, you've walked\n \(vm.todaysProgressPercentage) of your goal.")
             .brandTitle()
             .multilineTextAlignment(.center)
-         changeGoalButton
+         BrandButton(title: "Change Goal", onTap: vm.handleChangeGoalTapped)
       }
       
    }
    
    var currentStepProgress: some View {
-      NavigationLink(destination: StepsDetailScreen(stepSummary: viewModel.todaysStepSummary)) {
+      NavigationLink(destination: StepsDetailScreen(stepSummary: vm.todaysStepSummary,
+                                                    stepGoalStatus: vm.todaysStepSummary.stepGoalStatus(given: vm.dailyStepGoal))) {
          VStack(spacing: 16) {
             ZStack {
-               ArcProgressView(progress: todaysProgress)
+               ArcProgressView(progress: vm.todaysProgress)
                   .frame(width: UIScreen.main.bounds.width - 120)
                VStack {
                   Image(systemName: "figure.walk")
                      .font(.system(size: 40))
                      .foregroundStyle(BrandColors.B900)
                   
-                  Text("\(viewModel.todaysStepSummary.stepCount)".uppercased())
+                  Text("\(vm.todaysStepSummary.stepCount)".uppercased())
                      .brandProminentNumber()
                   Text("Steps".uppercased())
                      .brandSubtleOverline(color: BrandColors.B500)
@@ -108,40 +93,15 @@ extension HomeScreen {
          Text("Steps History")
             .brandTitle()
             .frame(maxWidth: .infinity, alignment: .leading)
-         ForEach(viewModel.stepHistory) { item in
-            NavigationLink(destination: StepsDetailScreen(stepSummary: item)) {
-               StepsListItemView(overline: item.dayString,
+         ForEach(vm.stepHistory) { item in
+            NavigationLink(destination: StepsDetailScreen(stepSummary: item, stepGoalStatus: item.stepGoalStatus(given: vm.dailyStepGoal))) {
+               StepsListItemView(overline: item.date.dayString,
                                  primaryText: "\(item.stepCount)",
-                                 secondaryText: item.shortDate )
+                                 secondaryText: item.date.shortDate,
+                                 goalStatus: item.stepGoalStatus(given: vm.dailyStepGoal))
             }
          }
       }
-   }
-}
-
-//MARK: - Functions
-extension HomeScreen {
-   func changeGoalPressed() {
-      
-   }
-}
-
-//MARK: - Private Extensions
-private extension StepSummary {
-   var shortDate: String {
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateStyle = .short
-      return dateFormatter.string(from: self.date)
-   }
-   
-   var dayString: String {
-      if Calendar.current.isDateInYesterday(self.date) {
-         return "Yesterday"
-      }
-      
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "EEEE"
-      return dateFormatter.string(from: self.date)
    }
 }
 

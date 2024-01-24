@@ -11,6 +11,36 @@ import XCTest
 
 final class Date_ExtensionsTests: XCTestCase {
    
+   func testShortDate_generatesCorrectString() {
+      //GIVEN
+      let expectedShortDate = "1/23/24"
+      let dateObject = Fixtures.january23
+      let shortDate: String
+      
+      //WHEN
+      shortDate = dateObject.shortDate
+      
+      //THEN
+      XCTAssertEqual(shortDate, expectedShortDate)
+   }
+   
+   func testDayString_generatesCorrectString() {
+      //GIVEN
+      let expectedDayString = "Tuesday"
+      let dateObject = Fixtures.january23
+      let dayString: String
+      
+      //WHEN
+      dayString = dateObject.dayString
+      
+      //THEN
+      if Calendar.current.isDateInYesterday(dateObject) {
+         XCTAssertEqual(dayString, "Yesterday")
+      } else {
+         XCTAssertEqual(dayString, expectedDayString)
+      }
+   }
+   
    func testGetPrevious_6Days() {
       let previous6Days = Date.getPrevious(nDays: 6, before: Fixtures.january23)
       

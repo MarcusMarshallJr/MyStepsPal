@@ -9,6 +9,24 @@ import Foundation
 
 extension Date {
    
+   ///Returns the shortened date style of this date: MM/DD/YY
+   var shortDate: String {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateStyle = .short
+      return dateFormatter.string(from: self)
+   }
+   
+   ///Returns the day value of this date as a String
+   var dayString: String {
+      if Calendar.current.isDateInYesterday(self) {
+         return "Yesterday"
+      }
+      
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "EEEE"
+      return dateFormatter.string(from: self)
+   }
+   
    ///Returns the first moment of the user's current calendar date
    static var startOfToday: Date {
       let now = Date()

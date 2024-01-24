@@ -11,43 +11,118 @@ import XCTest
 final class HomeScreenViewModelTests: XCTestCase {
    
    var mockPedometerService: MockPedometerService!
+   var mockUserDefaults: MockUserDefaults.Type!
    var subject: HomeScreenViewModel!
    
    override func setUpWithError() throws {
       super.setUp()
       mockPedometerService = MockPedometerService()
-      subject = HomeScreenViewModel(pedometerService: mockPedometerService)
+      mockUserDefaults = MockUserDefaults.self
+      subject = HomeScreenViewModel(pedometerService: mockPedometerService,
+                                    userDefaults: mockUserDefaults)
    }
    override func tearDownWithError() throws {
       subject = nil
+      mockUserDefaults.resetMockToDefaultValues()
       try super.tearDownWithError()
    }
    
-   func testViewModel_startsWithZeroStepCount() {
+   
+   //MARK: - Test Initalization State and Reset State
+   func testViewModel_startsWithZerosAndNils() {
       XCTAssertEqual(subject.todaysStepSummary.stepCount, 0)
+      XCTAssertEqual(subject.stepHistory.count, 0)
+      XCTAssertNil(subject.error)
+      XCTAssertFalse(subject.presentStepGoalSheet)
+      XCTAssertEqual(subject.dailyStepGoal, mockUserDefaults.dailyStepGoal)
+   }
+   func testResetUI_zerosAndNilsEveythingOut() {
+      //WHEN
+      subject.resetUI()
+      
+      //THEN
+      XCTAssertEqual(subject.todaysStepSummary.stepCount, 0)
+      XCTAssertEqual(subject.stepHistory.count, 0)
+      XCTAssertNil(subject.error)
+      XCTAssertFalse(subject.presentStepGoalSheet)
+      XCTAssertEqual(subject.dailyStepGoal, mockUserDefaults.dailyStepGoal)
    }
    
-   func testStartLiveStepData_stepCountingUnavailable_signalsError() {
+   
+   //MARK: - Test Computed Properties
+   func testTodayProgress_generatesCorrectDouble() async {
+      //GIVEN
+      mockPedometerService.livePedometerData_stubbed = Fixtures.validPedometerDatum
+      let expectedProgress = Double(Fixtures.validPedometerDatum.stepCount) / Double(mockUserDefaults.dailyStepGoal)
+      
+      //WHEN
+      await subject.startDataRetrival()
+      
+      //THEN
+      XCTAssertEqual(subject.todaysProgress, expectedProgress)
+   }
+   func testTodayProgressPercentage_generatesCorrectString() async {
+      //GIVEN
+      mockPedometerService.livePedometerData_stubbed = Fixtures.validPedometerDatum
+      let expectedProgressString = "45%"
+      
+      //WHEN
+      await subject.startDataRetrival()
+      
+      //THEN
+      XCTAssertEqual(subject.todaysProgressPercentage, expectedProgressString)
+   }
+   
+   
+   //MARK: - Test User Interaction Functions
+   func testHandleChangeGoalTapped() {
+      //WHEN
+      subject.handleChangeGoalTapped()
+      
+      //THEN
+      XCTAssertTrue(subject.presentStepGoalSheet)
+   }
+   func testHandleChangeGoalDismissed() {
+      //WHEN
+      subject.handleChangeGoalDismissed()
+      
+      //THEN
+      XCTAssertFalse(subject.presentStepGoalSheet)
+   }
+   func testHandleChangeGoalConfirmed_updatesUserDefaults() {
+      //GIVEN
+      let newGoal = mockUserDefaults.dailyStepGoal + 1000
+      
+      //WHEN
+      subject.handleChangeGoalConfirmed(newGoal: newGoal)
+      
+      //THEN
+      XCTAssertEqual(newGoal, mockUserDefaults.dailyStepGoal)
+   }
+   
+   
+   //MARK: - Test startDataRetrival
+   func testStartDataRetrival_stepCountingUnavailable_signalsError() async {
       //GIVEN
       mockPedometerService.pedometerIsAvailableForDevice = false
       
       //WHEN
-      subject.startLiveStepData()
+      await subject.startDataRetrival()
       
       //THEN
       XCTAssertEqual(subject.error, PedometerError.stepCountingUnavailable.rawValue)
    }
-   func testStartLiveStepData_permissionDenied_signalsError() {
+   func testStartDataRetrival_permissionDenied_signalsError() async {
       //GIVEN
       mockPedometerService.pedometerPermissionIsAuthorizedByUser = false
       
       //WHEN
-      subject.startLiveStepData()
+      await subject.startDataRetrival()
       
       //THEN
       XCTAssertEqual(subject.error, PedometerError.stepCountingPermissionDenied.rawValue)
    }
-   func testGetLivePedometerData_mapsPedometerDataToStepSummary() {
+   func testStartDataRetrival_setsStepSummaryForCurrentDay() async {
       
       //GIVEN
       var todaysStepSummary: StepSummary?
@@ -55,56 +130,34 @@ final class HomeScreenViewModelTests: XCTestCase {
       let matchingStepSummary = Fixtures.validStepSummary
       
       //WHEN
-      subject.startLiveStepData()
+      await subject.startDataRetrival()
       todaysStepSummary = subject.todaysStepSummary
       
       XCTAssertNotNil(todaysStepSummary)
       XCTAssertEqual(todaysStepSummary, matchingStepSummary)
    }
-   
-   func testGetHistoricalStepData_stepCountingUnavailable_signalsError() async {
-      //GIVEN
-      mockPedometerService.pedometerIsAvailableForDevice = false
+   func testStartDataRetrival_setsStepHistory() async {
       
-      //WHEN
-      await subject.getHistoricalStepData()
-      
-      //THEN
-      XCTAssertEqual(subject.error, PedometerError.stepCountingUnavailable.rawValue)
-   }
-   func testGetHistoricalStepData_permissionDenied_signalsError() async {
-      //GIVEN
-      mockPedometerService.pedometerPermissionIsAuthorizedByUser = false
-      
-      //WHEN
-      await subject.getHistoricalStepData()
-      
-      //THEN
-      XCTAssertEqual(subject.error, PedometerError.stepCountingPermissionDenied.rawValue)
-   }
-   func testGetHistoricalStepData_mapsPedometerDataToStepSummaries() async {
-
       //GIVEN
       var historicalStepData: [StepSummary]?
       mockPedometerService.historicalPedometerData_stubbed = Fixtures.validPedometerData
       let matchingReverseChronologicalStepSummaries =  Fixtures.validStepSummaries
       
       //WHEN
-      await subject.getHistoricalStepData()
+      await subject.startDataRetrival()
       historicalStepData = subject.stepHistory
       
       //THEN
       XCTAssertNotNil(historicalStepData)
       XCTAssertEqual(historicalStepData, matchingReverseChronologicalStepSummaries)
    }
-   
-   func testGetHistoricalStepData_hasReverseChronologicalStepHistory() async {
+   func testStartDataRetrival_hasReverseChronologicalStepHistory() async {
       //GIVEN
       var historicalStepData: [StepSummary]?
       mockPedometerService.historicalPedometerData_stubbed = Fixtures.validPedometerData
       
       //WHEN
-      await subject.getHistoricalStepData()
+      await subject.startDataRetrival()
       historicalStepData = subject.stepHistory
       
       XCTAssertNotNil(historicalStepData)
@@ -114,16 +167,9 @@ final class HomeScreenViewModelTests: XCTestCase {
          let nextIndex = index + 1
          if nextIndex < historicalStepData!.count {
             XCTAssertLessThan(historicalStepData![nextIndex].date, historicalStepData![index].date)
-
+            
          }
       }
    }
-   
-
-   
-   
-   
-   
-   
 }
 
