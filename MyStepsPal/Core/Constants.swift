@@ -16,4 +16,8 @@ struct BrandConstants {
 struct BrandColors {
    static let N900 = Color("N900")
    static let N200 = Color("N200")
+   static let N0 = Color("N0")
+   
+   static let B500 = Color("B500")
+   
 }

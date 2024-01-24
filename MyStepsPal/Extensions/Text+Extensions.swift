@@ -10,7 +10,7 @@ import SwiftUI
 extension Text {
     ///A convenience modifer that easily applies standard brand font styling to Text.
    func brandFont(size: CGFloat = 16,
-                    weight: Font.Weight = .regular,
+                  weight: Font.Weight = .regular,
                   color: Color = BrandColors.N900) -> some View {
       
       self.font(.system(size: size, design: .rounded))

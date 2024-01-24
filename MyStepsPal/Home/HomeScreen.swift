@@ -13,19 +13,27 @@ struct HomeScreen: View {
    
    var body: some View {
       NavigationStack {
-         ScrollView {
-            VStack(spacing: 16) {
-               appTitle
-                  .padding(.top, BrandConstants.sidePadding)
-                  .padding(.bottom, 60)
-               userGreeting
-               currentStepProgress
-               stepsHistory
-            }.padding(.horizontal, BrandConstants.sidePadding)
-               .task {
-                  await viewModel.getHistoricalStepData()
-                  viewModel.startLiveStepData()
-               }
+         ZStack(alignment: .top) {
+            ScrollView {
+               VStack(spacing: 16) {
+                  BrandLogo(color: BrandColors.N900)
+                     .padding(.top, BrandConstants.sidePadding)
+                     .padding(.bottom, 60)
+                  userGreeting
+                  currentStepProgress
+                  stepsHistory
+               }.padding(.horizontal, BrandConstants.sidePadding)
+                  
+            }
+            if let error = viewModel.error {
+               BrandColors.N900
+                  .ignoresSafeArea(.all)
+                  .opacity(0.4)
+               ErrorView(title: error)
+            }
+         }.task {
+            await viewModel.getHistoricalStepData()
+            viewModel.startLiveStepData()
          }
       }
    }
@@ -44,11 +52,6 @@ extension HomeScreen {
 
 //MARK: - Components
 extension HomeScreen {
-   var appTitle: some View {
-      Text("mystepspal™")
-         .brandFont(size: 24, weight: .black)
-   }
-   
    var changeGoalButton: some View {
       Button(action: changeGoalPressed, label: {
          Text("Change Goal")
@@ -79,7 +82,7 @@ extension HomeScreen {
                   .brandProminentNumber()
                Text("Steps".uppercased())
                   .brandSubtleOverline()
-
+               
             }
          }
          NavigationLink(destination: StepsDetailScreen(stepSummary: viewModel.todaysStepSummary)) {

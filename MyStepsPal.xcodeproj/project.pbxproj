@@ -40,6 +40,8 @@
 		0C1DF6A02B60FE0F00A00508 /* StepSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF69F2B60FE0F00A00508 /* StepSummaryTests.swift */; };
 		0C1DF6A22B60FE8100A00508 /* HomeScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6A12B60FE8100A00508 /* HomeScreenViewModelTests.swift */; };
 		0C1DF6A42B60FEF400A00508 /* MockPedometerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6A32B60FEF400A00508 /* MockPedometerService.swift */; };
+		0C1DF6A62B61075300A00508 /* BrandLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6A52B61075300A00508 /* BrandLogo.swift */; };
+		0C1DF6A82B6107F600A00508 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6A72B6107F600A00508 /* ErrorView.swift */; };
 		0C7C7C482B60DAA900444DD0 /* MyStepsPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */; };
 		0C7C7C4C2B60DAAA00444DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */; };
 		0C7C7C4F2B60DAAA00444DD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4E2B60DAAA00444DD0 /* Preview Assets.xcassets */; };
@@ -97,6 +99,8 @@
 		0C1DF69F2B60FE0F00A00508 /* StepSummaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSummaryTests.swift; sourceTree = "<group>"; };
 		0C1DF6A12B60FE8100A00508 /* HomeScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTests.swift; sourceTree = "<group>"; };
 		0C1DF6A32B60FEF400A00508 /* MockPedometerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPedometerService.swift; sourceTree = "<group>"; };
+		0C1DF6A52B61075300A00508 /* BrandLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandLogo.swift; sourceTree = "<group>"; };
+		0C1DF6A72B6107F600A00508 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		0C7C7C442B60DAA900444DD0 /* MyStepsPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStepsPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsPalApp.swift; sourceTree = "<group>"; };
 		0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				0C1DF6802B60F7EF00A00508 /* BrandVerticalDivider.swift */,
+				0C1DF6A52B61075300A00508 /* BrandLogo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				0C1DF68C2B60F9AD00A00508 /* StepsListItemView.swift */,
+				0C1DF6A72B6107F600A00508 /* ErrorView.swift */,
 				0C1DF68E2B60F9B500A00508 /* ArcProgressView.swift */,
 			);
 			path = Views;
@@ -438,9 +444,11 @@
 				0C1DF69E2B60FD1500A00508 /* Helpers.swift in Sources */,
 				0C1DF6862B60F98300A00508 /* HomeScreen.swift in Sources */,
 				0C1DF69A2B60FC5400A00508 /* MetricStyle.swift in Sources */,
+				0C1DF6A82B6107F600A00508 /* ErrorView.swift in Sources */,
 				0C1DF6962B60FC2F00A00508 /* StepsDetailScreen.swift in Sources */,
 				0C1DF6812B60F7EF00A00508 /* BrandVerticalDivider.swift in Sources */,
 				0C1DF6882B60F98C00A00508 /* HomeScreenViewModel.swift in Sources */,
+				0C1DF6A62B61075300A00508 /* BrandLogo.swift in Sources */,
 				0C1DF6572B60DFA600A00508 /* PedometerError.swift in Sources */,
 				0C1DF68D2B60F9AD00A00508 /* StepsListItemView.swift in Sources */,
 				0C1DF6932B60FAFD00A00508 /* StepSummary.swift in Sources */,
