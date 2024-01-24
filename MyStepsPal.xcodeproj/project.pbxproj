@@ -50,6 +50,7 @@
 		0C5168C92B6181CD00750068 /* UserDefaults_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5168C82B6181CD00750068 /* UserDefaults_Protocol.swift */; };
 		0C5168CB2B61833600750068 /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5168CA2B61833600750068 /* MockUserDefaults.swift */; };
 		0C5168CE2B61991100750068 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5168CD2B61991100750068 /* LaunchScreen.swift */; };
+		0C5168D02B61B39A00750068 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0C5168CF2B61B39A00750068 /* README.md */; };
 		0C7C7C482B60DAA900444DD0 /* MyStepsPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */; };
 		0C7C7C4C2B60DAAA00444DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */; };
 		0C7C7C4F2B60DAAA00444DD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4E2B60DAAA00444DD0 /* Preview Assets.xcassets */; };
@@ -117,6 +118,7 @@
 		0C5168C82B6181CD00750068 /* UserDefaults_Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults_Protocol.swift; sourceTree = "<group>"; };
 		0C5168CA2B61833600750068 /* MockUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
 		0C5168CD2B61991100750068 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		0C5168CF2B61B39A00750068 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C7C7C442B60DAA900444DD0 /* MyStepsPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStepsPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsPalApp.swift; sourceTree = "<group>"; };
 		0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		0C7C7C462B60DAA900444DD0 /* MyStepsPal */ = {
 			isa = PBXGroup;
 			children = (
+				0C5168CF2B61B39A00750068 /* README.md */,
 				0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */,
 				0C1DF67C2B60F7A200A00508 /* Core */,
 				0C1DF6582B60DFB400A00508 /* Extensions */,
@@ -460,6 +463,7 @@
 			files = (
 				0C7C7C4F2B60DAAA00444DD0 /* Preview Assets.xcassets in Resources */,
 				0C1DF6832B60F8DB00A00508 /* ColorAssets.xcassets in Resources */,
+				0C5168D02B61B39A00750068 /* README.md in Resources */,
 				0C7C7C4C2B60DAAA00444DD0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
