@@ -9,13 +9,13 @@ import Foundation
 
 ///A concrete implementation of a `Pedometer` that simulates data when run on an iOS Simulator
 struct SimulatorPedometer: Pedometer {
-    
-    //MARK: - Properties
+   
+   //MARK: - Properties
    var isAvailableForDevice: Bool = true
    var permissionIsAuthorizedByUser: Bool = true
    
-    
-    //MARK: - Functions
+   
+   //MARK: - Functions
    func startLivePedometerData(withHandler handler: @escaping (PedometerData?, Error?) -> Void) {
       let data = SimulatedPedometerData(date: Date.startOfToday,
                                         stepCount: 732,
@@ -41,10 +41,10 @@ struct SimulatorPedometer: Pedometer {
 
 //MARK: - Extensions
 extension SimulatorPedometer {
-    struct SimulatedPedometerData: PedometerData, Codable {
-       var date: Date
-       var stepCount: Int
-       var distanceMovedInMeters: Double?
-       var numStairsClimbed: Int?
-    }
+   struct SimulatedPedometerData: PedometerData, Codable {
+      var date: Date
+      var stepCount: Int
+      var distanceMovedInMeters: Double?
+      var numStairsClimbed: Int?
+   }
 }

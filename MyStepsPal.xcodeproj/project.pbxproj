@@ -141,9 +141,9 @@
 				0C7C7C612B60DAAA00444DD0 /* MyStepsPalUITests */,
 				0C7C7C452B60DAA900444DD0 /* Products */,
 			);
-			indentWidth = 4;
+			indentWidth = 3;
 			sourceTree = "<group>";
-			tabWidth = 4;
+			tabWidth = 3;
 		};
 		0C7C7C452B60DAA900444DD0 /* Products */ = {
 			isa = PBXGroup;

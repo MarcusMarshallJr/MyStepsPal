@@ -11,19 +11,19 @@ import CoreMotion
 /// A concrete implementation of the `PedometerService_Protocol` that uses `CMPedometer` or a `SimulatedPedometer` as its data source depending on the run enviornment.
 class PedometerService: PedometerService_Protocol {
    
-    //MARK: - Properties
-    ///The pedometer data source that generates data for the service
+   //MARK: - Properties
+   ///The pedometer data source that generates data for the service
    var pedometer: Pedometer
    
-    
-    //MARK: - Initalization
+   
+   //MARK: - Initalization
    init(pedometer: Pedometer = PedometerService.pedometerFactory) {
       self.pedometer = pedometer
    }
    
-    
-    //MARK: - Functions
-    ///Requests that underling pedometer to begin generating live data, checking first, to ensure theres an available pedometer and it has permission to use it. Then, it provides the data via an asychronously called completion handler.
+   
+   //MARK: - Functions
+   ///Requests that underling pedometer to begin generating live data, checking first, to ensure theres an available pedometer and it has permission to use it. Then, it provides the data via an asychronously called completion handler.
    func startLivePedometerData(withHandler handler: @escaping (PedometerData?, Error?) -> Void) throws {
       
       guard pedometer.isAvailableForDevice else {
@@ -71,14 +71,14 @@ class PedometerService: PedometerService_Protocol {
 
 //MARK: - Static Properties
 extension PedometerService {
-    /// A factory that provides the appropriate pedometer given the run enviornment
+   /// A factory that provides the appropriate pedometer given the run enviornment
    static var pedometerFactory: Pedometer {
-      #if targetEnvironment(simulator)
-
-         return SimulatorPedometer()
-      #else
+#if targetEnvironment(simulator)
       
-         return CMPedometer()
-      #endif
+      return SimulatorPedometer()
+#else
+      
+      return CMPedometer()
+#endif
    }
 }
