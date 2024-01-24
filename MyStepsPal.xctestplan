@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "6C4E407A-0425-4C91-A2C0-C398D6AB1332",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MyStepsPal.xcodeproj",
+      "identifier" : "0C7C7C432B60DAA900444DD0",
+      "name" : "MyStepsPal"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MyStepsPal.xcodeproj",
+        "identifier" : "0C7C7C532B60DAAA00444DD0",
+        "name" : "MyStepsPalTests"
+      }
+    }
+  ],
+  "version" : 1
+}
