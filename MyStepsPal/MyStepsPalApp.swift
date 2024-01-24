@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct MyStepsPalApp: App {
+   
+   @State private var showLaunchScreen: Bool = true
+   
    var body: some Scene {
       WindowGroup {
-         HomeScreen()
+         if showLaunchScreen {
+            LaunchScreen(isShown: $showLaunchScreen)
+         } else {
+            HomeScreen()
+         }
       }
    }
 }
