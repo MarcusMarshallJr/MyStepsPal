@@ -58,6 +58,16 @@ struct Fixtures {
       return Fixtures.validPedometerData[0]
    }
    
+   static var validStepSummaries: [StepSummary] {
+      return validPedometerData
+         .map { StepSummary(from: $0) }
+         .sorted(by: { $0.date > $1.date})
+   }
+   
+   static var validStepSummary: StepSummary {
+      return validStepSummaries[0]
+   }
+   
    static var january23: Date {
       return try! Date("2024-01-23T00:00:00-06:00", strategy: .iso8601)
    }

@@ -30,7 +30,7 @@ class HomeScreenViewModel: ObservableObject {
          try pedometerService.startLivePedometerData { livePedometerData, error in
             guard let livePedometerData else {
                guaranteeThisRunsOnMainThread {
-                  self.error = "No pedometer data"
+                  self.error = PedometerError.pedometerDataNil.rawValue
                }
                return
             }
@@ -66,7 +66,15 @@ class HomeScreenViewModel: ObservableObject {
          
       } catch (let error) {
          await MainActor.run {
-            self.error = (error as! PedometerError).rawValue
+            
+            if let pedometerError = error as? PedometerError {
+               self.error = pedometerError.rawValue
+            } else {
+               self.error = "Unknown error"
+               print(error.localizedDescription)
+            }
+            
+            
          }
          
       }

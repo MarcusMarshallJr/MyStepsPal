@@ -37,6 +37,9 @@
 		0C1DF69A2B60FC5400A00508 /* MetricStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6992B60FC5400A00508 /* MetricStyle.swift */; };
 		0C1DF69C2B60FC6A00A00508 /* MetricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF69B2B60FC6A00A00508 /* MetricView.swift */; };
 		0C1DF69E2B60FD1500A00508 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF69D2B60FD1500A00508 /* Helpers.swift */; };
+		0C1DF6A02B60FE0F00A00508 /* StepSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF69F2B60FE0F00A00508 /* StepSummaryTests.swift */; };
+		0C1DF6A22B60FE8100A00508 /* HomeScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6A12B60FE8100A00508 /* HomeScreenViewModelTests.swift */; };
+		0C1DF6A42B60FEF400A00508 /* MockPedometerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6A32B60FEF400A00508 /* MockPedometerService.swift */; };
 		0C7C7C482B60DAA900444DD0 /* MyStepsPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */; };
 		0C7C7C4C2B60DAAA00444DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */; };
 		0C7C7C4F2B60DAAA00444DD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4E2B60DAAA00444DD0 /* Preview Assets.xcassets */; };
@@ -91,6 +94,9 @@
 		0C1DF6992B60FC5400A00508 /* MetricStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricStyle.swift; sourceTree = "<group>"; };
 		0C1DF69B2B60FC6A00A00508 /* MetricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricView.swift; sourceTree = "<group>"; };
 		0C1DF69D2B60FD1500A00508 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		0C1DF69F2B60FE0F00A00508 /* StepSummaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSummaryTests.swift; sourceTree = "<group>"; };
+		0C1DF6A12B60FE8100A00508 /* HomeScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTests.swift; sourceTree = "<group>"; };
+		0C1DF6A32B60FEF400A00508 /* MockPedometerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPedometerService.swift; sourceTree = "<group>"; };
 		0C7C7C442B60DAA900444DD0 /* MyStepsPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStepsPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsPalApp.swift; sourceTree = "<group>"; };
 		0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,9 +157,10 @@
 		0C1DF66A2B60EFF300A00508 /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
-				0C1DF66B2B60F01F00A00508 /* MockPedometer.swift */,
 				0C1DF66F2B60F21B00A00508 /* Fixtures.swift */,
+				0C1DF66B2B60F01F00A00508 /* MockPedometer.swift */,
 				0C1DF66D2B60F03800A00508 /* MockPedometerData.swift */,
+				0C1DF6A32B60FEF400A00508 /* MockPedometerService.swift */,
 			);
 			path = TestDoubles;
 			sourceTree = "<group>";
@@ -271,8 +278,10 @@
 		0C7C7C572B60DAAA00444DD0 /* MyStepsPalTests */ = {
 			isa = PBXGroup;
 			children = (
+				0C1DF69F2B60FE0F00A00508 /* StepSummaryTests.swift */,
 				0C1DF67A2B60F69C00A00508 /* Date+ExtensionsTests.swift */,
 				0C1DF6682B60EF5700A00508 /* PedometerServiceTests.swift */,
+				0C1DF6A12B60FE8100A00508 /* HomeScreenViewModelTests.swift */,
 				0C1DF6782B60F60100A00508 /* SimulatorPedometerTests.swift */,
 				0C1DF66A2B60EFF300A00508 /* TestDoubles */,
 			);
@@ -452,11 +461,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C1DF66E2B60F03800A00508 /* MockPedometerData.swift in Sources */,
+				0C1DF6A22B60FE8100A00508 /* HomeScreenViewModelTests.swift in Sources */,
 				0C1DF6692B60EF5700A00508 /* PedometerServiceTests.swift in Sources */,
+				0C1DF6A42B60FEF400A00508 /* MockPedometerService.swift in Sources */,
 				0C1DF66C2B60F01F00A00508 /* MockPedometer.swift in Sources */,
 				0C1DF67B2B60F69C00A00508 /* Date+ExtensionsTests.swift in Sources */,
 				0C1DF6702B60F21B00A00508 /* Fixtures.swift in Sources */,
 				0C1DF6792B60F60100A00508 /* SimulatorPedometerTests.swift in Sources */,
+				0C1DF6A02B60FE0F00A00508 /* StepSummaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +627,7 @@
 				DEVELOPMENT_TEAM = 5VXJUNYC2Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMotionUsageDescription = "MyStepsPal uses your device's motion data to show you how close you are to your daily step goal.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -644,6 +657,7 @@
 				DEVELOPMENT_TEAM = 5VXJUNYC2Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMotionUsageDescription = "MyStepsPal uses your device's motion data to show you how close you are to your daily step goal.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
