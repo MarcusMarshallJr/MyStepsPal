@@ -27,8 +27,17 @@
 		0C1DF67E2B60F7B100A00508 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF67D2B60F7B100A00508 /* Constants.swift */; };
 		0C1DF6812B60F7EF00A00508 /* BrandVerticalDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6802B60F7EF00A00508 /* BrandVerticalDivider.swift */; };
 		0C1DF6832B60F8DB00A00508 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DF6822B60F8DB00A00508 /* ColorAssets.xcassets */; };
+		0C1DF6862B60F98300A00508 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6852B60F98300A00508 /* HomeScreen.swift */; };
+		0C1DF6882B60F98C00A00508 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6872B60F98C00A00508 /* HomeScreenViewModel.swift */; };
+		0C1DF68D2B60F9AD00A00508 /* StepsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF68C2B60F9AD00A00508 /* StepsListItemView.swift */; };
+		0C1DF68F2B60F9B500A00508 /* ArcProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF68E2B60F9B500A00508 /* ArcProgressView.swift */; };
+		0C1DF6912B60F9DF00A00508 /* Text+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6902B60F9DF00A00508 /* Text+Extensions.swift */; };
+		0C1DF6932B60FAFD00A00508 /* StepSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6922B60FAFD00A00508 /* StepSummary.swift */; };
+		0C1DF6962B60FC2F00A00508 /* StepsDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6952B60FC2F00A00508 /* StepsDetailScreen.swift */; };
+		0C1DF69A2B60FC5400A00508 /* MetricStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6992B60FC5400A00508 /* MetricStyle.swift */; };
+		0C1DF69C2B60FC6A00A00508 /* MetricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF69B2B60FC6A00A00508 /* MetricView.swift */; };
+		0C1DF69E2B60FD1500A00508 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF69D2B60FD1500A00508 /* Helpers.swift */; };
 		0C7C7C482B60DAA900444DD0 /* MyStepsPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */; };
-		0C7C7C4A2B60DAA900444DD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C492B60DAA900444DD0 /* ContentView.swift */; };
 		0C7C7C4C2B60DAAA00444DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */; };
 		0C7C7C4F2B60DAAA00444DD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4E2B60DAAA00444DD0 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -72,9 +81,18 @@
 		0C1DF67D2B60F7B100A00508 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0C1DF6802B60F7EF00A00508 /* BrandVerticalDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandVerticalDivider.swift; sourceTree = "<group>"; };
 		0C1DF6822B60F8DB00A00508 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		0C1DF6852B60F98300A00508 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		0C1DF6872B60F98C00A00508 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
+		0C1DF68C2B60F9AD00A00508 /* StepsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsListItemView.swift; sourceTree = "<group>"; };
+		0C1DF68E2B60F9B500A00508 /* ArcProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcProgressView.swift; sourceTree = "<group>"; };
+		0C1DF6902B60F9DF00A00508 /* Text+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extensions.swift"; sourceTree = "<group>"; };
+		0C1DF6922B60FAFD00A00508 /* StepSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSummary.swift; sourceTree = "<group>"; };
+		0C1DF6952B60FC2F00A00508 /* StepsDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsDetailScreen.swift; sourceTree = "<group>"; };
+		0C1DF6992B60FC5400A00508 /* MetricStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricStyle.swift; sourceTree = "<group>"; };
+		0C1DF69B2B60FC6A00A00508 /* MetricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricView.swift; sourceTree = "<group>"; };
+		0C1DF69D2B60FD1500A00508 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		0C7C7C442B60DAA900444DD0 /* MyStepsPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStepsPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsPalApp.swift; sourceTree = "<group>"; };
-		0C7C7C492B60DAA900444DD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C7C7C4E2B60DAAA00444DD0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C7C7C542B60DAAA00444DD0 /* MyStepsPalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyStepsPalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +143,7 @@
 				0C1DF6592B60DFCB00A00508 /* String+Extensions.swift */,
 				0C1DF65F2B60E09700A00508 /* Date+Extensions.swift */,
 				0C1DF6632B60EB9D00A00508 /* CoreMotion+Extensions.swift */,
+				0C1DF6902B60F9DF00A00508 /* Text+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				0C1DF67D2B60F7B100A00508 /* Constants.swift */,
+				0C1DF6922B60FAFD00A00508 /* StepSummary.swift */,
+				0C1DF69D2B60FD1500A00508 /* Helpers.swift */,
 				0C1DF67F2B60F7D500A00508 /* Views */,
 			);
 			path = Core;
@@ -154,6 +175,51 @@
 				0C1DF6802B60F7EF00A00508 /* BrandVerticalDivider.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0C1DF6842B60F95400A00508 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DF6852B60F98300A00508 /* HomeScreen.swift */,
+				0C1DF6872B60F98C00A00508 /* HomeScreenViewModel.swift */,
+				0C1DF68B2B60F99700A00508 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0C1DF68B2B60F99700A00508 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DF68C2B60F9AD00A00508 /* StepsListItemView.swift */,
+				0C1DF68E2B60F9B500A00508 /* ArcProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0C1DF6942B60FC1300A00508 /* StepsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DF6952B60FC2F00A00508 /* StepsDetailScreen.swift */,
+				0C1DF6982B60FC4900A00508 /* Enums */,
+				0C1DF6972B60FC3500A00508 /* Views */,
+			);
+			path = StepsDetail;
+			sourceTree = "<group>";
+		};
+		0C1DF6972B60FC3500A00508 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DF69B2B60FC6A00A00508 /* MetricView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0C1DF6982B60FC4900A00508 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DF6992B60FC5400A00508 /* MetricStyle.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		0C7C7C3B2B60DAA900444DD0 = {
@@ -185,7 +251,8 @@
 				0C1DF67C2B60F7A200A00508 /* Core */,
 				0C1DF6582B60DFB400A00508 /* Extensions */,
 				0C1DF6512B60DF4500A00508 /* Services */,
-				0C7C7C492B60DAA900444DD0 /* ContentView.swift */,
+				0C1DF6842B60F95400A00508 /* Home */,
+				0C1DF6942B60FC1300A00508 /* StepsDetail */,
 				0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */,
 				0C1DF6822B60F8DB00A00508 /* ColorAssets.xcassets */,
 				0C7C7C4D2B60DAAA00444DD0 /* Preview Content */,
@@ -355,11 +422,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1DF68F2B60F9B500A00508 /* ArcProgressView.swift in Sources */,
+				0C1DF69C2B60FC6A00A00508 /* MetricView.swift in Sources */,
 				0C1DF6622B60EAE200A00508 /* PedometerService.swift in Sources */,
 				0C1DF6642B60EB9D00A00508 /* CoreMotion+Extensions.swift in Sources */,
+				0C1DF69E2B60FD1500A00508 /* Helpers.swift in Sources */,
+				0C1DF6862B60F98300A00508 /* HomeScreen.swift in Sources */,
+				0C1DF69A2B60FC5400A00508 /* MetricStyle.swift in Sources */,
+				0C1DF6962B60FC2F00A00508 /* StepsDetailScreen.swift in Sources */,
 				0C1DF6812B60F7EF00A00508 /* BrandVerticalDivider.swift in Sources */,
-				0C7C7C4A2B60DAA900444DD0 /* ContentView.swift in Sources */,
+				0C1DF6882B60F98C00A00508 /* HomeScreenViewModel.swift in Sources */,
 				0C1DF6572B60DFA600A00508 /* PedometerError.swift in Sources */,
+				0C1DF68D2B60F9AD00A00508 /* StepsListItemView.swift in Sources */,
+				0C1DF6932B60FAFD00A00508 /* StepSummary.swift in Sources */,
 				0C1DF6602B60E09700A00508 /* Date+Extensions.swift in Sources */,
 				0C7C7C482B60DAA900444DD0 /* MyStepsPalApp.swift in Sources */,
 				0C1DF65C2B60E06000A00508 /* Pedometer.swift in Sources */,
@@ -367,6 +442,7 @@
 				0C1DF65A2B60DFCB00A00508 /* String+Extensions.swift in Sources */,
 				0C1DF6772B60F42E00A00508 /* SimulatorPedometer.swift in Sources */,
 				0C1DF6552B60DF8800A00508 /* PedometerService_Protocol.swift in Sources */,
+				0C1DF6912B60F9DF00A00508 /* Text+Extensions.swift in Sources */,
 				0C1DF67E2B60F7B100A00508 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

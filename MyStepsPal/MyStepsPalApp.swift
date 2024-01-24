@@ -11,7 +11,7 @@ import SwiftUI
 struct MyStepsPalApp: App {
    var body: some Scene {
       WindowGroup {
-         ContentView()
+         HomeScreen()
       }
    }
 }
