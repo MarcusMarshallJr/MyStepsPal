@@ -8,7 +8,7 @@
 import Foundation
 
 ///A set of errors specific to an object that provides pedometer related data
-enum PedometerServiceError: String, Error {
+enum PedometerError: String, Error {
     
    case stepCountingUnavailable = "Step Counting is not available on this device."
    case stepCountingAuthorizationUndetermined = "User has not indicated authorization status of pedometer data."

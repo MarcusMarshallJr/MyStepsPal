@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0C1DF6552B60DF8800A00508 /* PedometerService_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6542B60DF8800A00508 /* PedometerService_Protocol.swift */; };
-		0C1DF6572B60DFA600A00508 /* PedometerServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6562B60DFA600A00508 /* PedometerServiceError.swift */; };
+		0C1DF6572B60DFA600A00508 /* PedometerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6562B60DFA600A00508 /* PedometerError.swift */; };
 		0C1DF65A2B60DFCB00A00508 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6592B60DFCB00A00508 /* String+Extensions.swift */; };
 		0C1DF65C2B60E06000A00508 /* Pedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF65B2B60E06000A00508 /* Pedometer.swift */; };
 		0C1DF65E2B60E06800A00508 /* PedometerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF65D2B60E06800A00508 /* PedometerData.swift */; };
 		0C1DF6602B60E09700A00508 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF65F2B60E09700A00508 /* Date+Extensions.swift */; };
+		0C1DF6622B60EAE200A00508 /* PedometerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6612B60EAE200A00508 /* PedometerService.swift */; };
+		0C1DF6642B60EB9D00A00508 /* CoreMotion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DF6632B60EB9D00A00508 /* CoreMotion+Extensions.swift */; };
 		0C7C7C482B60DAA900444DD0 /* MyStepsPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */; };
 		0C7C7C4A2B60DAA900444DD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C7C492B60DAA900444DD0 /* ContentView.swift */; };
 		0C7C7C4C2B60DAAA00444DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C7C4B2B60DAAA00444DD0 /* Assets.xcassets */; };
@@ -41,11 +43,13 @@
 
 /* Begin PBXFileReference section */
 		0C1DF6542B60DF8800A00508 /* PedometerService_Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerService_Protocol.swift; sourceTree = "<group>"; };
-		0C1DF6562B60DFA600A00508 /* PedometerServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerServiceError.swift; sourceTree = "<group>"; };
+		0C1DF6562B60DFA600A00508 /* PedometerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerError.swift; sourceTree = "<group>"; };
 		0C1DF6592B60DFCB00A00508 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		0C1DF65B2B60E06000A00508 /* Pedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedometer.swift; sourceTree = "<group>"; };
 		0C1DF65D2B60E06800A00508 /* PedometerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerData.swift; sourceTree = "<group>"; };
 		0C1DF65F2B60E09700A00508 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		0C1DF6612B60EAE200A00508 /* PedometerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerService.swift; sourceTree = "<group>"; };
+		0C1DF6632B60EB9D00A00508 /* CoreMotion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+Extensions.swift"; sourceTree = "<group>"; };
 		0C7C7C442B60DAA900444DD0 /* MyStepsPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStepsPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7C7C472B60DAA900444DD0 /* MyStepsPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsPalApp.swift; sourceTree = "<group>"; };
 		0C7C7C492B60DAA900444DD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,8 +90,9 @@
 		0C1DF6512B60DF4500A00508 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0C1DF6612B60EAE200A00508 /* PedometerService.swift */,
 				0C1DF6542B60DF8800A00508 /* PedometerService_Protocol.swift */,
-				0C1DF6562B60DFA600A00508 /* PedometerServiceError.swift */,
+				0C1DF6562B60DFA600A00508 /* PedometerError.swift */,
 				0C1DF65B2B60E06000A00508 /* Pedometer.swift */,
 				0C1DF65D2B60E06800A00508 /* PedometerData.swift */,
 			);
@@ -99,6 +104,7 @@
 			children = (
 				0C1DF6592B60DFCB00A00508 /* String+Extensions.swift */,
 				0C1DF65F2B60E09700A00508 /* Date+Extensions.swift */,
+				0C1DF6632B60EB9D00A00508 /* CoreMotion+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,8 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1DF6622B60EAE200A00508 /* PedometerService.swift in Sources */,
+				0C1DF6642B60EB9D00A00508 /* CoreMotion+Extensions.swift in Sources */,
 				0C7C7C4A2B60DAA900444DD0 /* ContentView.swift in Sources */,
-				0C1DF6572B60DFA600A00508 /* PedometerServiceError.swift in Sources */,
+				0C1DF6572B60DFA600A00508 /* PedometerError.swift in Sources */,
 				0C1DF6602B60E09700A00508 /* Date+Extensions.swift in Sources */,
 				0C7C7C482B60DAA900444DD0 /* MyStepsPalApp.swift in Sources */,
 				0C1DF65C2B60E06000A00508 /* Pedometer.swift in Sources */,
